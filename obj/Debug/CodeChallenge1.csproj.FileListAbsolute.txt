@@ -1,0 +1,13 @@
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\bin\Debug\CodeChallenge1.exe.config
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\obj\Debug\CodeChallenge1.csprojResolveAssemblyReference.cache
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\bin\Debug\CodeChallenge1.exe
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\bin\Debug\CodeChallenge1.pdb
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\bin\Debug\BattleShipBoard.dll
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\obj\Debug\CodeChallenge1.exe
+c:\users\kong\documents\visual studio 2013\Projects\CodeChallenge1\CodeChallenge1\obj\Debug\CodeChallenge1.pdb
+C:\Users\U8015366\Downloads\code_challenge1-master\bin\Debug\CodeChallenge1.exe.config
+C:\Users\U8015366\Downloads\code_challenge1-master\bin\Debug\CodeChallenge1.exe
+C:\Users\U8015366\Downloads\code_challenge1-master\bin\Debug\CodeChallenge1.pdb
+C:\Users\U8015366\Downloads\code_challenge1-master\obj\Debug\CodeChallenge1.exe
+C:\Users\U8015366\Downloads\code_challenge1-master\obj\Debug\CodeChallenge1.pdb
+C:\Users\U8015366\Downloads\code_challenge1-master\obj\Debug\CodeChallenge1.csprojResolveAssemblyReference.cache

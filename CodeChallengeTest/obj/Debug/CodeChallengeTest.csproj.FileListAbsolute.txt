@@ -1,0 +1,7 @@
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\obj\Debug\CodeChallengeTest.csprojResolveAssemblyReference.cache
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\bin\Debug\CodeChallengeTest.dll
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\bin\Debug\CodeChallengeTest.pdb
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\bin\Debug\CodeChallenge1.exe
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\bin\Debug\CodeChallenge1.pdb
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\obj\Debug\CodeChallengeTest.dll
+C:\Users\U8015366\Downloads\code_challenge1-master\CodeChallengeTest\obj\Debug\CodeChallengeTest.pdb
