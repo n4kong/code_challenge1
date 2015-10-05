@@ -11,7 +11,7 @@ namespace CodeChallengeTest
         [ExpectedException(typeof(ArgumentException), "A column and row number must be a value between 1 to 10.")]
         public void Fire_ColumnOverThan10ShouldThrowException()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             board.Fire(11, 1);
         }
 
@@ -19,7 +19,7 @@ namespace CodeChallengeTest
         [ExpectedException(typeof(ArgumentException), "A column and row number must be a value between 1 to 10.")]
         public void Fire_ColumnLowerThan0ShouldThrowException()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             board.Fire(0, 1);
         }
 
@@ -27,7 +27,7 @@ namespace CodeChallengeTest
         [ExpectedException(typeof(ArgumentException), "A column and row number must be a value between 1 to 10.")]
         public void Fire_RowOverThan10ShouldThrowException()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             board.Fire(1, 11);
         }
 
@@ -35,14 +35,14 @@ namespace CodeChallengeTest
         [ExpectedException(typeof(ArgumentException), "A column and row number must be a value between 1 to 10.")]
         public void Fire_RowLowerThan0ShouldThrowException()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             board.Fire(1, 0);
         }
 
         [TestMethod]
         public void Fire_WhenCorrectColumnAndRow_ThenReturnHIT()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             var result = board.Fire(2, 1);
 
             Assert.AreEqual(Result.HIT, result);
@@ -51,7 +51,7 @@ namespace CodeChallengeTest
         [TestMethod]
         public void Fire_WhenIncorrectColumnAndRow_ThenReturnMISS()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             var result = board.Fire(1, 1);
 
             Assert.AreEqual(Result.MISS, result);
@@ -60,7 +60,7 @@ namespace CodeChallengeTest
         [TestMethod]
         public void Fire_WhenCorrectAll_ThenReturnCompleted()
         {
-            BattheshipBoard board = new BattheshipBoard();
+            BattleshipBoard board = new BattleshipBoard();
             // Ship 5 length
             var result = board.Fire(2, 1);
             Assert.AreEqual(Result.HIT, result);
