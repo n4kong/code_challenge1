@@ -1,0 +1,8 @@
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\bin\Debug\BattleshipAi2.exe.config
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\bin\Debug\BattleshipAi2.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\bin\Debug\BattleshipAi2.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\bin\Debug\CodeChallenge1.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\bin\Debug\CodeChallenge1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.csprojResolveAssemblyReference.cache
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.pdb
