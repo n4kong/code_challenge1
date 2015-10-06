@@ -13,3 +13,4 @@ D:\Projects\AAA\code_challenge1\BattleshipAi2\bin\Debug\CodeChallenge1.dll
 D:\Projects\AAA\code_challenge1\BattleshipAi2\bin\Debug\CodeChallenge1.pdb
 D:\Projects\AAA\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.exe
 D:\Projects\AAA\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.pdb
+D:\Projects\AAA\code_challenge1\BattleshipAi2\obj\Debug\BattleshipAi2.csprojResolveAssemblyReference.cache

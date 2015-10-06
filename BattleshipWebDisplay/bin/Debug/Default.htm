@@ -1,0 +1,170 @@
+﻿<html>
+
+<head>
+    <title>BattleshipWebDisplay</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- AppServer: The toolkitver meta tag is required -->
+    <meta name="toolkitver" content="1.0.9.6702" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/importall_dark2.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/sons-of-obsidian.css" />
+    <script src="Scripts/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="Scripts/prettify.js"></script>
+
+    <script>
+        var battleshipMod = angular.module("BattleshipMod", []);
+        battleshipMod.controller("BattleshipCtrl", ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
+            
+            var timer;
+
+            $scope.doBattle = function () {
+                timer = $interval(updateTeam1, 500);
+                $http({
+                    method: 'GET',
+                    url: 'battleship/play'
+                }).then(function successCallback(response) {
+                    console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+            }
+
+            $scope.doReset = function () {
+                $http({
+                    method: 'GET',
+                    url: 'battleship/reset'
+                }).then(function successCallback(response) {
+                    console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+                $scope.gotWinner = false;
+                $interval.cancel(timer);
+                updateTeam1();
+
+            }
+            
+            
+            $scope.gotWinner = false;
+            $scope.team1Data = {};
+            $scope.team2Data = {};
+            function updateTeam1() {
+                $http({
+                    method: 'GET',
+                    url: 'battleship/team1'
+                }).then(function successCallback(response) {
+                    if (response.data.IsWin) {
+                        $scope.gotWinner = true;
+                        showWinner();
+                        $interval.cancel(timer);
+                    }
+
+                    $scope.team1Data = response.data;
+                    var json = JSON.stringify(response.data.Board);
+                    $scope.team1Data.Board = JSON.parse(json);
+                    
+                    //console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+
+                $http({
+                    method: 'GET',
+                    url: 'battleship/team2'
+                }).then(function successCallback(response) {
+                    if (response.data.IsWin) {
+                        $scope.gotWinner = true;
+                        showWinner();
+                        $interval.cancel(timer);
+                    }
+                    $scope.team2Data = response.data;
+                    var json = JSON.stringify(response.data.Board);
+                    $scope.team2Data.Board = JSON.parse(json)
+                    //console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+            }
+
+            function showWinner() {
+
+                if ($scope.team1Data.TotalShips < $scope.team2Data.TotalShips) {
+                    $scope.winnerName = $scope.team1Data.TeamName + " WIN !!";
+                } else if ($scope.team1Data.TotalShips > $scope.team2Data.TotalShips) {
+                    $scope.winnerName = $scope.team2Data.TeamName + " WIN !!";
+                } else {
+                    $scope.winnerName = "DRAW !!";
+                }
+            }
+
+
+
+        }]);
+    </script>
+    <style>
+        .hit {
+            background-color: red
+        }
+        .miss {
+            background-color: yellowgreen
+        }
+    </style>
+
+</head>
+<!-- AppServer: Set the page's title in top window onload -->
+<body ng-app="BattleshipMod" ng-controller="BattleshipCtrl">
+    <div style=" padding-top:50px;">
+        <div class="flex-row">
+            <div class="flex-item content" style="width: 50%;padding-top: 50px;
+    padding-left: 15%;
+    padding-bottom: 50px;">
+
+                <span><h3>Team: {{team1Data.TeamName}}</h3> </span>
+                <table>
+                    <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
+                        <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
+                            style="padding: 15px; border-style: solid;  border-color: chocolate; border-width: 1px;"
+                            ng-class="{  'miss' : team1Data.Board[column][row]=='MISS', 'hit' : team1Data.Board[column][row]=='HIT' || team1Data.Board[column][row]=='MISSION_COMPLETED' }"></td>
+                    </tr>
+                </table>
+
+                <span><h4>Total Fire: {{team1Data.TotalFires}}</h4> </span>
+                <span><h4>Total Ship Left: {{team1Data.TotalShips}}</h4> </span>
+
+            </div>
+            <div class="flex-item flex-split1 flex-row">
+                <div class="flex-item flex-split1 content" style="width: 50%;padding-top: 50px;
+    padding-left: 20%;
+    padding-bottom: 50px;">
+                    <span><h3>Team: {{team2Data.TeamName}}</h3> </span>
+
+                    <table>
+                        <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
+                            <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
+                                style="padding: 15px; border-style: solid;  border-color: chocolate; border-width: 1px;"
+                                ng-class="{  'miss' : team2Data.Board[column][row]=='MISS', 'hit' : team2Data.Board[column][row]=='HIT' || team2Data.Board[column][row]=='MISSION_COMPLETED' }"></td>
+                        </tr>
+                    </table>
+
+                    <span><h4>Total Fire: {{team2Data.TotalFires}}</h4> </span>
+                    <span><h4>Total Ship Left: {{team2Data.TotalShips}}</h4> </span>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center">
+            <button class="cta" ng-click="doBattle()"> Battle !!! </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button ng-click="doReset()">Reset</button>
+        </div>
+        <div ng-show="gotWinner" style="    position: absolute;    top: 25%;    left: 10%;"><span style="    font-size: 7em;
+    font-weight: 900;
+    color: white;
+     -webkit-text-stroke: 1px black;
+   
+   text-shadow:
+       9px 8px 0 #ccc, 4px 6px 0 #ccc, 1px -1px 0 #ccc, -1px 1px 0 #ccc, 1px 1px 0 #ccc
+    ">{{winnerName}}</span></div>
+    </div>
+</body>
+</html>

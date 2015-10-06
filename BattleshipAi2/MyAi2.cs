@@ -16,7 +16,6 @@ namespace BattleshipAi2
             {
                 for (int j = 1; j <= 10; j++)
                 {
-                    Thread.Sleep(500);
                     var result = fireable.Fire(i, j);
                     if (result == Result.MISSION_COMPLETED)
                     {
@@ -28,7 +27,30 @@ namespace BattleshipAi2
 
         public string GetTeamName()
         {
-            return "The GGGG Team";
+            return "SWAT Team";
+        }
+    }
+
+    public class KongAi2 : IBattleshipAi
+    {
+        public void Play(IFireable fireable)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                for (int j = 1; j <= 10; j++)
+                {
+                    var result = fireable.Fire(j, i);
+                    if (result == Result.MISSION_COMPLETED)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+        public string GetTeamName()
+        {
+            return "The KONG AI";
         }
     }
 }

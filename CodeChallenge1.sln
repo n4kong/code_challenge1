@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipAi", "BattleshipA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipAi2", "BattleshipAi2\BattleshipAi2.csproj", "{91E8B1A4-BFB1-4BB3-A1F6-738BE684248A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipWebDisplay", "BattleshipWebDisplay\BattleshipWebDisplay.csproj", "{8E070900-D875-48C1-AD5A-88F1D1C4C4B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{91E8B1A4-BFB1-4BB3-A1F6-738BE684248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91E8B1A4-BFB1-4BB3-A1F6-738BE684248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91E8B1A4-BFB1-4BB3-A1F6-738BE684248A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E070900-D875-48C1-AD5A-88F1D1C4C4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E070900-D875-48C1-AD5A-88F1D1C4C4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E070900-D875-48C1-AD5A-88F1D1C4C4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E070900-D875-48C1-AD5A-88F1D1C4C4B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

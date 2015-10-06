@@ -1,0 +1,7 @@
+﻿{
+	"name": "BattleshipWebDisplay",
+	"displayName": "BattleshipWebDisplay",
+	"version" : "1.0.0",
+	"description" : "BattleshipWebDisplay WebApi app",
+	"defaultPlatform" : "WebApi"
+}
