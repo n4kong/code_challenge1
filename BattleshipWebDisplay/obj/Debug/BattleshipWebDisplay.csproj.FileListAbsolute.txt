@@ -22,3 +22,31 @@ D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipAi2.exe
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\CodeChallenge1.dll
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipAi2.pdb
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\CodeChallenge1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Resources\labels.en-US.resx
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Resources\labels.ja-JP.resx
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Resources\labels.zh-CN.resx
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\ApplicationType.xml
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Default.htm
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Scripts\jquery-2.1.0.intellisense.js
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Scripts\jquery-2.1.0.js
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Scripts\jquery-2.1.0.min.js
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Scripts\prettify.js
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\desert.css
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\importall_dark2.css
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\prettify.css
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\sons-of-obsidian.css
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\app.json
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Scripts\jquery-2.1.0.min.map
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\ThomsonReuters.Eikon.BattleshipWebDisplay.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\ThomsonReuters.Eikon.BattleshipWebDisplay.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipAi2.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\CodeChallenge1.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipAi2.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\CodeChallenge1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\obj\Debug\BattleshipWebDisplay.csprojResolveAssemblyReference.cache
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\obj\Debug\ThomsonReuters.Eikon.BattleshipWebDisplay.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\obj\Debug\ThomsonReuters.Eikon.BattleshipWebDisplay.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\explosion-02.mp3
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\splash-01.wav
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\smb_stage_clear.wav
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\csshake-hard.css

@@ -17,7 +17,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
         public void UpdateDisplay(Guid id, int column, int row, Result result)
         {
             TeamData[id].SetResult(column, row, result);
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
         }
 
         internal void setBoardId1(Guid guid, string teamName)
@@ -78,6 +78,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
         public bool IsPlaying { get; set; }
 
         public bool IsWin { get; set; }
+        public bool IsHit { get; set; }
 
         public TeamObject(string teamName)
         {
@@ -99,6 +100,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
             TotalFires = 0;
             IsPlaying = false;
             IsWin = false;
+            IsHit = false;
         }
 
         internal void SetResult(int column, int row, Result result)
@@ -108,6 +110,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
             {
                 IsWin = true;
                 IsPlaying = false;
+                IsHit = true;
                 return;
             }
 
@@ -115,8 +118,15 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
             row--;
             TotalFires++;
             if (result == Result.HIT || result == Result.MISSION_COMPLETED)
+            {
                 TotalShips--;
+                IsHit = true;
+            }
+            else
+            {
+                IsHit = false;
 
+            }
             Board[column, row] = result.ToString();
         }
 

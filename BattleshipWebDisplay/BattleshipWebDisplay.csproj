@@ -17,7 +17,7 @@
     <EnableJSDebugging>False</EnableJSDebugging>
     <!-- The following properties are used by the extension -->
     <BaseExtensionPath>$(LOCALAPPDATA)</BaseExtensionPath>
-    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\mghi5i2d.buj</AppServerSDKPath>
+    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\v4x5nqo5.z3f</AppServerSDKPath>
     <IsAppServerApp>True</IsAppServerApp>
     <CreatedVersion>1.0.0.11</CreatedVersion>
     <UpgradedVersion>
@@ -100,6 +100,10 @@
     <Compile Include="BattleshipWebDisplayController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="explosion-02.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\labels.en-US.resx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -120,6 +124,18 @@
     </Content>
     <Content Include="Scripts\prettify.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="smb_stage_clear.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="splash-01.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Styles\csshake-hard.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Styles\desert.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

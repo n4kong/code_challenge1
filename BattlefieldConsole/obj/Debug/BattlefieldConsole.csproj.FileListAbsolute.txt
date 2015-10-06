@@ -1,0 +1,15 @@
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattlefieldConsole.exe.config
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattlefieldConsole.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattlefieldConsole.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\obj\Debug\BattlefieldConsole.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\obj\Debug\BattlefieldConsole.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\obj\Debug\BattlefieldConsole.csprojResolveAssemblyReference.cache
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattleshipAi.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\CodeChallenge1.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattleshipAi.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\CodeChallenge1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattleshipAi2.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\BattlefieldConsole\bin\Debug\BattleshipAi2.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattlefieldConsole\bin\Debug\BattlefieldConsole.exe.config
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattlefieldConsole\obj\Debug\BattlefieldConsole.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattlefieldConsole\obj\Debug\BattlefieldConsole.pdb

@@ -9,9 +9,9 @@
     <link rel="stylesheet" type="text/css" href="Styles/importall_dark2.css" />
     <link rel="stylesheet" type="text/css" href="Styles/prettify.css" />
     <link rel="stylesheet" type="text/css" href="Styles/sons-of-obsidian.css" />
+    <link href="styles/csshake-hard.css" rel="stylesheet" />
     <script src="Scripts/jquery-2.1.0.js"></script>
     <script type="text/javascript" src="Scripts/prettify.js"></script>
-
     <script>
         var battleshipMod = angular.module("BattleshipMod", []);
         battleshipMod.controller("BattleshipCtrl", ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
@@ -19,7 +19,10 @@
             var timer;
 
             $scope.doBattle = function () {
-                timer = $interval(updateTeam1, 500);
+                $scope.gotWinner = false;
+                $interval.cancel(timer);
+
+                timer = $interval(updateTeam1, 2000);
                 $http({
                     method: 'GET',
                     url: 'battleship/play'
@@ -45,7 +48,9 @@
 
             }
             
-            
+            var hitSound = new Audio('explosion-02.mp3');
+            var missSound = new Audio('splash-01.wav');
+            var completedSound = new Audio('smb_stage_clear.wav');
             $scope.gotWinner = false;
             $scope.team1Data = {};
             $scope.team2Data = {};
@@ -59,6 +64,8 @@
                         showWinner();
                         $interval.cancel(timer);
                     }
+                   
+                    playSound(response.data.IsHit, response.data.IsWin)
 
                     $scope.team1Data = response.data;
                     var json = JSON.stringify(response.data.Board);
@@ -78,6 +85,9 @@
                         showWinner();
                         $interval.cancel(timer);
                     }
+
+                    playSound(response.data.IsHit, response.data.IsWin)
+
                     $scope.team2Data = response.data;
                     var json = JSON.stringify(response.data.Board);
                     $scope.team2Data.Board = JSON.parse(json)
@@ -87,13 +97,26 @@
                 });
             }
 
+            function playSound(isHit, isWin) {
+                if (isWin) {
+                    completedSound.play();
+                } else if (isHit) {
+                    hitSound.play();
+                } else {
+                    missSound.play();
+                }
+            }
+            $scope.winnerRounds = [];
             function showWinner() {
 
                 if ($scope.team1Data.TotalShips < $scope.team2Data.TotalShips) {
+                    $scope.winnerRounds.push($scope.team1Data.TeamName);
                     $scope.winnerName = $scope.team1Data.TeamName + " WIN !!";
                 } else if ($scope.team1Data.TotalShips > $scope.team2Data.TotalShips) {
+                    $scope.winnerRounds.push($scope.team2Data.TeamName);
                     $scope.winnerName = $scope.team2Data.TeamName + " WIN !!";
                 } else {
+                    $scope.winnerRounds.push("---");
                     $scope.winnerName = "DRAW !!";
                 }
             }
@@ -121,7 +144,7 @@
     padding-bottom: 50px;">
 
                 <span><h3>Team: {{team1Data.TeamName}}</h3> </span>
-                <table>
+                <table class="" ng-class="{'shake-hard shake-constant' : team1Data.IsHit}">
                     <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
                         <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
                             style="padding: 15px; border-style: solid;  border-color: chocolate; border-width: 1px;"
@@ -130,7 +153,7 @@
                 </table>
 
                 <span><h4>Total Fire: {{team1Data.TotalFires}}</h4> </span>
-                <span><h4>Total Ship Left: {{team1Data.TotalShips}}</h4> </span>
+                <span><h4>Ships Leftover: <span style="font-size:5em;">{{team1Data.TotalShips}}</span></h4> </span>
 
             </div>
             <div class="flex-item flex-split1 flex-row">
@@ -139,7 +162,7 @@
     padding-bottom: 50px;">
                     <span><h3>Team: {{team2Data.TeamName}}</h3> </span>
 
-                    <table>
+                    <table class="" ng-class="{'shake-hard shake-constant' : team2Data.IsHit}">
                         <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
                             <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
                                 style="padding: 15px; border-style: solid;  border-color: chocolate; border-width: 1px;"
@@ -148,10 +171,24 @@
                     </table>
 
                     <span><h4>Total Fire: {{team2Data.TotalFires}}</h4> </span>
-                    <span><h4>Total Ship Left: {{team2Data.TotalShips}}</h4> </span>
+                    <span><h4>Ships Leftover: <span style="font-size:5em;">{{team2Data.TotalShips}}</span></h4> </span>
                 </div>
             </div>
         </div>
+        <!--<div style="text-align:center">
+            <table ng-show="winnerRounds.length > 0" style="width: 300px;padding: 5px; " align="center">
+                <tbody>
+                    <tr>
+                        <td><b>Round</b></td>
+                        <td><b>Winner</b></td>
+                    </tr>
+                    <tr ng-repeat="winner in winnerRounds  track by $index">
+                        <td>Round {{$index + 1}}       </td>
+                        <td> {{winner}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
         <div style="text-align:center">
             <button class="cta" ng-click="doBattle()"> Battle !!! </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
