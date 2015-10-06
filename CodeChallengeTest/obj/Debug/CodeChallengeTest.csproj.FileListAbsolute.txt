@@ -12,3 +12,10 @@ C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\CodeChalleng
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\CodeChallengeTest\obj\Debug\CodeChallengeTest.dll
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\CodeChallengeTest\obj\Debug\CodeChallengeTest.pdb
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\CodeChallengeTest\bin\Debug\CodeChallenge1.dll
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\bin\Debug\CodeChallengeTest.dll
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\bin\Debug\CodeChallengeTest.pdb
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\bin\Debug\CodeChallenge1.dll
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\bin\Debug\CodeChallenge1.pdb
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\obj\Debug\CodeChallengeTest.csprojResolveAssemblyReference.cache
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\obj\Debug\CodeChallengeTest.dll
+D:\Projects\AAA\code_challenge1\CodeChallengeTest\obj\Debug\CodeChallengeTest.pdb
