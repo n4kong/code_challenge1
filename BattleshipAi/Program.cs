@@ -12,12 +12,10 @@ namespace CodeChallenge1
         static void Main(string[] args)
         {
             var board = new BattleshipBoard();
-            board.CreateRandomBoard();
             BattleshipAi ai = new BattleshipAi();
             ai.Play(board);
 
-            Console.WriteLine("Total Hit:" + board.GetHit());
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }

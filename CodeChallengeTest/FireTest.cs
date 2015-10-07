@@ -111,7 +111,7 @@ namespace CodeChallengeTest
             result = board.Fire(1, 1);
             Assert.AreEqual(Result.MISSION_COMPLETED, result);
 
-            Assert.AreEqual(21, board.GetHit());
+            Assert.AreEqual(21, board.FireCount);
         }
     }
 }

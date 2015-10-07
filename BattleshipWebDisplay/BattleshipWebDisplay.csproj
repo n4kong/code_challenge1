@@ -17,7 +17,7 @@
     <EnableJSDebugging>False</EnableJSDebugging>
     <!-- The following properties are used by the extension -->
     <BaseExtensionPath>$(LOCALAPPDATA)</BaseExtensionPath>
-    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\v4x5nqo5.z3f</AppServerSDKPath>
+    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\mghi5i2d.buj</AppServerSDKPath>
     <IsAppServerApp>True</IsAppServerApp>
     <CreatedVersion>1.0.0.11</CreatedVersion>
     <UpgradedVersion>

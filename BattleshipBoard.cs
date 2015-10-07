@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CodeChallenge1
@@ -11,6 +12,66 @@ namespace CodeChallenge1
     public interface IDisplay
     {
         void UpdateDisplay(Guid id, int column, int row, Result result);
+    }
+    public class CmdDisplay : IDisplay
+    {
+        public CmdDisplay()
+        {
+            
+            fireCount = 0;
+            shipsLeftOver = 17;
+            board = new string[10, 10] 
+        {
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."}
+        };
+        }
+        int delay = 100;
+        int shipsLeftOver = 17;
+        int fireCount = 0;
+        string[,] board = new string[10, 10];
+        public void UpdateDisplay(Guid id, int column, int row, Result result)
+        {
+            column--;
+            row--;
+            fireCount++;
+            board[column,row] = result == Result.HIT || result == Result.MISSION_COMPLETED ? "X" : "*";
+
+            if (result == Result.HIT || result == Result.MISSION_COMPLETED)
+            {
+                shipsLeftOver--;
+            }
+
+            printBoard();
+
+        }
+        private void printBoard()
+        {
+            Console.Clear();
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Console.Write(board[j,i]);                    
+                }
+                Console.WriteLine();
+            }
+            
+
+            Console.WriteLine();
+            Console.WriteLine("Total Fires: " + fireCount );
+            Console.WriteLine("Ships Leftover: " +shipsLeftOver);
+            Thread.Sleep(delay);
+        }
+
     }
     public interface IFireable
     {
@@ -30,7 +91,7 @@ namespace CodeChallenge1
         private readonly Random RANDOM = new Random();
         private Guid Id = Guid.NewGuid();
 
-        private int hitCount = 0;
+        public int FireCount { get; private set; }
         private string[,] boardOriginal;
         private string[,] board = new string[10, 10] 
         {
@@ -45,11 +106,13 @@ namespace CodeChallenge1
             {".",".",".",".",".",".",".","X",".","."},
             {".",".",".",".",".",".",".",".",".","."}
         };
+   
 
         public BattleshipBoard()
         {
-            hitCount = 0;
+            FireCount = 0;
             boardOriginal = (string[,]) board.Clone();
+            display = new CmdDisplay();
         }
         private IDisplay display;
         public BattleshipBoard(IDisplay display) : this()
@@ -74,7 +137,7 @@ namespace CodeChallenge1
 
             column--;
             row--;
-            hitCount++;
+            FireCount++;
 
             if (IsMissionCompleted())
                 return Result.MISSION_COMPLETED;
@@ -100,10 +163,7 @@ namespace CodeChallenge1
             return true;
         }
 
-        public object GetHit()
-        {
-            return hitCount;
-        }
+     
         public Guid GetId()
         {
             return Id;
@@ -123,7 +183,7 @@ namespace CodeChallenge1
                         break;
                 }
             }
-            hitCount = 0;
+            FireCount = 0;
             boardOriginal = (string[,])board;
         }
 

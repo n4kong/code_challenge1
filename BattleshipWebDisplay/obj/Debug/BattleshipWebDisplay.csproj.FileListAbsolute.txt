@@ -50,3 +50,7 @@ C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWe
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\splash-01.wav
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\smb_stage_clear.wav
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\csshake-hard.css
+D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\csshake-hard.css
+D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\explosion-02.mp3
+D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\smb_stage_clear.wav
+D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\splash-01.wav
