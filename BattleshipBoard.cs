@@ -34,18 +34,21 @@ namespace CodeChallenge1
             {".",".",".",".",".",".",".",".",".","."}
         };
         }
-        int delay = 100;
+        int delay = 250;
         int shipsLeftOver = 17;
         int fireCount = 0;
         string[,] board = new string[10, 10];
         public void UpdateDisplay(Guid id, int column, int row, Result result)
         {
+            if (shipsLeftOver == 0)
+                return;
+
             column--;
             row--;
             fireCount++;
             board[column,row] = result == Result.HIT || result == Result.MISSION_COMPLETED ? "X" : "*";
 
-            if (result == Result.HIT || result == Result.MISSION_COMPLETED)
+            if (result == Result.HIT || result == Result.MISSION_COMPLETED && shipsLeftOver > 0)
             {
                 shipsLeftOver--;
             }

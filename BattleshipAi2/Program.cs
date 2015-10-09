@@ -13,8 +13,10 @@ namespace BattleshipAi2
         {
             BattleshipBoard board = new BattleshipBoard();
             MyBattleshipAi myBattleshipAi = new MyBattleshipAi();
+            board.CreateRandomBoard();
             myBattleshipAi.Play(board);
 
+            Console.ReadLine();
         }
     }
 
@@ -22,13 +24,14 @@ namespace BattleshipAi2
     {
         public void Play(IFireable fireable)
         {
-            throw new NotImplementedException();
-            // var result = fireable.Fire(1, 2);
+            fireable.Fire(2, 1);
+            fireable.Fire(4, 3);
+            fireable.Fire(6, 7);
         }
 
         public string GetTeamName()
         {
-            throw new NotImplementedException();
+            return "Preview Borad";
         }
     }
 }
