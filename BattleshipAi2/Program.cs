@@ -13,7 +13,7 @@ namespace BattleshipAi2
         {
             BattleshipBoard board = new BattleshipBoard();
             MyBattleshipAi myBattleshipAi = new MyBattleshipAi();
-            board.CreateRandomBoard();
+            //board.CreateRandomBoard();
             myBattleshipAi.Play(board);
 
             Console.ReadLine();
@@ -24,6 +24,14 @@ namespace BattleshipAi2
     {
         public void Play(IFireable fireable)
         {
+            var result = fireable.Fire(2, 1);
+            Console.WriteLine(result);
+            result = fireable.Fire(2, 1);
+            Console.WriteLine(result);
+            fireable.Fire(2, 1);
+            fireable.Fire(2, 1);
+            fireable.Fire(2, 1);
+            fireable.Fire(2, 1);
             fireable.Fire(2, 1);
             fireable.Fire(4, 3);
             fireable.Fire(6, 7);

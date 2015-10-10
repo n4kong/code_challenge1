@@ -46,11 +46,15 @@ namespace CodeChallenge1
             column--;
             row--;
             fireCount++;
-            board[column,row] = result == Result.HIT || result == Result.MISSION_COMPLETED ? "X" : "*";
 
-            if (result == Result.HIT || result == Result.MISSION_COMPLETED && shipsLeftOver > 0)
+            if (board[column, row] == ".")
             {
-                shipsLeftOver--;
+                board[column, row] = result == Result.HIT || result == Result.MISSION_COMPLETED ? "X" : "*";
+
+                if (result == Result.HIT || result == Result.MISSION_COMPLETED && shipsLeftOver > 0)
+                {
+                    shipsLeftOver--;
+                }
             }
 
             printBoard();
@@ -124,12 +128,12 @@ namespace CodeChallenge1
             this.display = display;
         }
 
-        public BattleshipBoard(IDisplay display, string[,] topic) : this()
-        {
-            this.display = display;
-            this.board = (string[,])topic.Clone();
-            this.boardOriginal = (string[,])board.Clone();
-        }
+        //public BattleshipBoard(IDisplay display, string[,] topic) : this()
+        //{
+        //    this.display = display;
+        //    this.board = (string[,])topic.Clone();
+        //    this.boardOriginal = (string[,])board.Clone();
+        //}
 
         public Result Fire(int column, int row)
         {
