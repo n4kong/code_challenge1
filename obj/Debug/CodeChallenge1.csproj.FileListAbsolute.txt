@@ -16,7 +16,6 @@ C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\bin\Debug\Co
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\bin\Debug\CodeChallenge1.dll.config
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\bin\Debug\CodeChallenge1.dll
 C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\obj\Debug\CodeChallenge1.dll
-C:\Users\Kong\Documents\visual studio 2013\Projects\code_challenge1\obj\Debug\CodeChallenge1.csprojResolveAssemblyReference.cache
 D:\Projects\AAA\code_challenge1\bin\Debug\CodeChallenge1.dll.config
 D:\Projects\AAA\code_challenge1\bin\Debug\CodeChallenge1.dll
 D:\Projects\AAA\code_challenge1\bin\Debug\CodeChallenge1.pdb

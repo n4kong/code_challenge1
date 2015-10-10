@@ -73,14 +73,14 @@ namespace BattlefieldConsole
             Thread.Sleep(500);
         }
 
-        internal void Display(BattleshipAi ai, BattleshipBoard board)
-        {
-            SetTeamName(ai.GetTeamName());
-            Print();
-            ai.Play(board);
+        //internal void Display(BattleshipAi ai, BattleshipBoard board)
+        //{
+        //    SetTeamName(ai.GetTeamName());
+        //    Print();
+        //    ai.Play(board);
 
-            Console.WriteLine();
-            Console.WriteLine(ai.GetTeamName() + " WIN!!");
-        }
+        //    Console.WriteLine();
+        //    Console.WriteLine(ai.GetTeamName() + " WIN!!");
+        //}
     }
 }

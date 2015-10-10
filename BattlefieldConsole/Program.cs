@@ -23,7 +23,7 @@ namespace BattlefieldConsole
             BattleshipBoard board1 = new BattleshipBoard(console1);
             BattleshipBoard board2 = new BattleshipBoard(console1);  
          
-            IBattleshipAi ai1 = new BattleshipAi();
+            IBattleshipAi ai1 = new BattleshipAi.BattleshipAi();
             IBattleshipAi ai2 = new MyAi2();
 
 

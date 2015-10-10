@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattlefieldConsole", "Battl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterGame", "EnterGame\EnterGame.csproj", "{1C8D7048-7A6F-476A-98CD-48D1C24FD47F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleshipChecker", "BattleshipChecker\BattleshipChecker.csproj", "{4FF5ACEA-198C-4C65-B70A-E46590E1C493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDllAi1", "SampleDllAi1\SampleDllAi1.csproj", "{36373A4E-9B5B-4C99-BB2B-490CC724B7E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{1C8D7048-7A6F-476A-98CD-48D1C24FD47F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C8D7048-7A6F-476A-98CD-48D1C24FD47F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C8D7048-7A6F-476A-98CD-48D1C24FD47F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF5ACEA-198C-4C65-B70A-E46590E1C493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF5ACEA-198C-4C65-B70A-E46590E1C493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF5ACEA-198C-4C65-B70A-E46590E1C493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF5ACEA-198C-4C65-B70A-E46590E1C493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36373A4E-9B5B-4C99-BB2B-490CC724B7E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36373A4E-9B5B-4C99-BB2B-490CC724B7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36373A4E-9B5B-4C99-BB2B-490CC724B7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36373A4E-9B5B-4C99-BB2B-490CC724B7E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

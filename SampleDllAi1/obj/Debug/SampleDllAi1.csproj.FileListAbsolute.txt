@@ -1,0 +1,8 @@
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\obj\Debug\SampleDllAi1.csprojResolveAssemblyReference.cache
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\bin\Debug\SampleDllAi1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\bin\Debug\CodeChallenge1.dll
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\bin\Debug\CodeChallenge1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\obj\Debug\SampleDllAi1.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\bin\Debug\SampleDllAi1.exe.config
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\bin\Debug\SampleDllAi1.exe
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\SampleDllAi1\obj\Debug\SampleDllAi1.exe
