@@ -13,11 +13,16 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
         Dictionary<Guid, TeamObject> TeamData = new Dictionary<Guid, TeamObject>();
         Guid board1Id;
         Guid board2Id;
-        
+        public int Delay {get;set;}
+
+        public WebDisplay()
+        {
+            Delay = 2000;
+        }
         public void UpdateDisplay(Guid id, int column, int row, Result result)
         {
             TeamData[id].SetResult(column, row, result);
-            Thread.Sleep(2000);
+            Thread.Sleep(Delay);
         }
 
         internal void setBoardId1(Guid guid, string teamName)
@@ -119,8 +124,11 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
             TotalFires++;
             if (result == Result.HIT || result == Result.MISSION_COMPLETED)
             {
+
                 TotalShips--;
                 IsHit = true;
+                if (result == Result.MISSION_COMPLETED)
+                    IsPlaying = false;
             }
             else
             {

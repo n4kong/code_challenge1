@@ -1,0 +1,161 @@
+﻿<html>
+
+<head>
+    <title>BattleshipWebDisplay</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- AppServer: The toolkitver meta tag is required -->
+    <meta name="toolkitver" content="1.0.9.6702" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/importall_dark2.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="Styles/sons-of-obsidian.css" />
+    <link href="styles/csshake-hard.css" rel="stylesheet" />
+    <style>
+        .team-odd {
+               background-color: #341905; 
+        }
+        .team-even {
+              background-color: #562806; 
+        }
+        table.result td {
+            padding:5px; border:1px solid #86766a; font-size:12px;
+        }
+        table.result tr.header td {
+            font-weight:bold;
+        }
+    </style>
+    <script src="Scripts/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="Scripts/prettify.js"></script>
+    <script>
+        var battleshipMod = angular.module("BattleshipMod", []);
+        battleshipMod.controller("CheckerCtrl", ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
+
+
+            $http({
+                method: 'GET',
+                url: 'checker/problem/1'
+            }).then(function successCallback(response) {
+                $scope.problem1 = response.data
+                console.log(response);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+            $http({
+                method: 'GET',
+                url: 'checker/problem/2'
+            }).then(function successCallback(response) {
+                $scope.problem2 = response.data
+                console.log(response);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+            $http({
+                method: 'GET',
+                url: 'checker/problem/3'
+            }).then(function successCallback(response) {
+                $scope.problem3 = response.data
+                console.log(response);
+            }, function errorCallback(response) {
+                console.log(response);
+            });
+
+            $scope.doCheck = function () {
+                $scope.results = null;
+                $http({
+                    method: 'GET',
+                    url: 'checker/problem'
+                }).then(function successCallback(response) {
+                    $scope.results = response.data
+                    console.log(response);
+                }, function errorCallback(response) {
+                    console.log(response);
+                });
+            }
+         
+        }]);
+    </script>
+    <style>
+        .hit {
+            background-color: red;
+        }
+
+        .miss {
+            background-color: yellowgreen;
+        }
+    </style>
+
+</head>
+<!-- AppServer: Set the page's title in top window onload -->
+<body ng-app="BattleshipMod" ng-controller="CheckerCtrl">
+    <div style=" padding-top:50px;">
+        <div class="flex-row">
+            <div class="flex-item content" style="width: 20%;padding-top: 50px;
+    padding-left: 5%; ">
+
+                <span><h3>Problem 1</h3> </span>
+                <table class="" >
+                    <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
+                        <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
+                            style="padding: 5px; border-style: solid;  border-color: chocolate; border-width: 1px;"
+                            ng-class="{  'miss' : problem1[row][column]=='.', 'hit' : problem1[row][column]=='X' }"></td>
+                    </tr>
+                </table>
+
+                <span><h3>Problem 2</h3> </span>
+                <table class="" >
+                    <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
+                        <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
+                            style="padding: 5px; border-style: solid;  border-color: chocolate; border-width: 1px;"
+                            ng-class="{  'miss' : problem2[row][column]=='.', 'hit' : problem2[row][column]=='X' }"></td>
+                    </tr>
+                </table>
+
+                <span><h3>Problem 3</h3> </span>
+                <table class="" >
+                    <tr ng-repeat="row in [0,1,2,3,4,5,6,7,8,9] ">
+                        <td ng-repeat="column in [0,1,2,3,4,5,6,7,8,9]"
+                            style="padding: 5px; border-style: solid;  border-color: chocolate; border-width: 1px;"
+                            ng-class="{  'miss' : problem3[row][column]=='.', 'hit' : problem3[row][column]=='X' }"></td>
+                    </tr>
+                </table>
+
+
+            </div>
+            <div class="flex-item flex-split1 flex-row">
+                <div class="flex-item flex-split1 content" style="padding-top: 50px;  padding-left: 5%;">
+                    <span><h3>Teams Score Board</h3> </span>
+
+                    <table class="result" >
+                        <tr class="header">
+                            <td style="width:60%;">Name</td>
+                            <td style="width:10%;">Problem 1</td>
+                            <td style="width:10%;">Problem 2</td>
+                            <td style="width:10%;">Problem 3</td>
+                            <td style="width:10%;">Total</td>
+                        </tr>
+                        <tr ng-repeat="result in results " ng-class-odd="'team-odd'" ng-class-even="'team-even'">
+                            <td style="">
+                                {{result.TeamName}}
+                            </td>
+                            <td>{{(result.IsFoul) ? "Foul" : result.Problem1}}</td>
+                            <td>{{(result.IsFoul) ? "Foul" : result.Problem2}}</td>
+                            <td>{{(result.IsFoul) ? "Foul" : result.Problem3}}</td>
+                            <td>{{(result.IsFoul) ? "Foul" : result.Sum}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center">
+            <button class="cta" ng-click="doCheck()"> Check </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <!--<button ng-click="doReset()">Reset</button>-->
+        </div>
+
+    </div>
+</body>
+</html>

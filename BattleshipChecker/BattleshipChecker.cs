@@ -17,10 +17,19 @@ namespace BattleshipChecker
     }
     public class BattleshipChecker
     {
+        private string path;
+
+        public BattleshipChecker(string p)
+        {
+            this.path = p;
+        }
+        public BattleshipChecker()
+        {
+            this.path = Directory.GetCurrentDirectory();
+        }
         public List<IBattleshipAi> GetBattleshipAis()
         {
-            var dir = Directory.GetCurrentDirectory();
-            string[] dlls = Directory.GetFiles(dir + "\\" + "BattleshipDlls", "*.dll");
+            string[] dlls = Directory.GetFiles(this.path + "\\" + "BattleshipDlls", "*.dll");
 
             var battleshipAiDlls = (
                     from file in dlls
@@ -33,7 +42,7 @@ namespace BattleshipChecker
             return battleshipAiDlls;
         }
 
-        public Dictionary<string, TeamResults> CheckTopic1(string[,] problem, int repeatCount)
+        public Dictionary<string, TeamResults> CheckTopic(string[,] problem, int repeatCount)
         {
             Dictionary<string, TeamResults> results = new Dictionary<string, TeamResults>();
             for (int i = 0; i < repeatCount; i++)

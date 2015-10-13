@@ -128,12 +128,13 @@ namespace CodeChallenge1
             this.display = display;
         }
 
-        //public BattleshipBoard(IDisplay display, string[,] topic) : this()
-        //{
-        //    this.display = display;
-        //    this.board = (string[,])topic.Clone();
-        //    this.boardOriginal = (string[,])board.Clone();
-        //}
+        public BattleshipBoard(IDisplay display, string[,] topic)
+            : this()
+        {
+            this.display = display;
+            this.board = (string[,])topic.Clone();
+            this.boardOriginal = (string[,])board.Clone();
+        }
 
         public Result Fire(int column, int row)
         {

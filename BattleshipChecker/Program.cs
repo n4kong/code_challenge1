@@ -20,7 +20,7 @@ namespace BattleshipChecker
             {".",".","X",".","X",".",".",".",".","."},
             {".",".","X",".","X",".",".",".",".","."},
             {".",".","X",".","X",".",".",".",".","."},
-            {".",".","X",".","X",".",".",".",".","."},
+            {".",".",".",".","X",".",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","X"},
             {"X","X","X",".",".",".",".",".",".","X"}
@@ -33,7 +33,7 @@ namespace BattleshipChecker
             {".",".",".",".",".","X",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","."},
             {".",".",".",".",".",".","X","X","X","X"},
-            {".",".",".",".",".",".",".",".",".","."},
+            {".",".","X",".",".",".",".",".",".","."},
             {".",".","X",".",".",".",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","."},
@@ -61,15 +61,15 @@ namespace BattleshipChecker
             BattleshipChecker bc = new BattleshipChecker();
 
             Console.WriteLine("#### Problem 1 ####" );
-            var result1 = bc.CheckTopic1(problem1, repeatCount);
+            var result1 = bc.CheckTopic(problem1, repeatCount);
             PrintResult(result1);
 
             Console.WriteLine("#### Problem 2 ####");
-            var result2 = bc.CheckTopic1(problem2, repeatCount);
+            var result2 = bc.CheckTopic(problem2, repeatCount);
             PrintResult(result2);
 
             Console.WriteLine("#### Problem 3 ####");
-            var result3 = bc.CheckTopic1(problem3, repeatCount);
+            var result3 = bc.CheckTopic(problem3, repeatCount);
             PrintResult(result3);
 
             Console.WriteLine();

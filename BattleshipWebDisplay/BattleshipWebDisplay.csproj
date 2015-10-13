@@ -92,6 +92,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckerController.cs" />
     <Compile Include="Display\TeamObject.cs" />
     <Compile Include="Display\WebDisplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -102,6 +103,9 @@
   <ItemGroup>
     <Content Include="explosion-02.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Checker.htm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\labels.en-US.resx">
@@ -163,10 +167,18 @@
       <Project>{91e8b1a4-bfb1-4bb3-a1f6-738be684248a}</Project>
       <Name>BattleshipAi2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BattleshipChecker\BattleshipChecker.csproj">
+      <Project>{4ff5acea-198c-4c65-b70a-e46590e1c493}</Project>
+      <Name>BattleshipChecker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CodeChallenge1.csproj">
       <Project>{4c35b21f-f166-45fe-b748-4f29c74b498a}</Project>
       <Name>CodeChallenge1</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BattleshipDlls\" />
+    <Folder Include="Checker\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
