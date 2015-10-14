@@ -30,6 +30,7 @@
         var battleshipMod = angular.module("BattleshipMod", []);
         battleshipMod.controller("CheckerCtrl", ['$scope', '$http', '$interval', '$timeout', function ($scope, $http, $interval, $timeout) {
 
+            $scope.sampling = 1;
 
             $http({
                 method: 'GET',
@@ -65,7 +66,7 @@
                 $scope.results = null;
                 $http({
                     method: 'GET',
-                    url: 'checker/problem'
+                    url: 'checker/' + $scope.sampling
                 }).then(function successCallback(response) {
                     $scope.results = response.data
                     console.log(response);
@@ -133,6 +134,7 @@
                             <td style="width:10%;">Problem 1</td>
                             <td style="width:10%;">Problem 2</td>
                             <td style="width:10%;">Problem 3</td>
+                            <td style="width:10%;">Timetaken (ms.)</td>
                             <td style="width:10%;">Total</td>
                         </tr>
                         <tr ng-repeat="result in results " ng-class-odd="'team-odd'" ng-class-even="'team-even'">
@@ -142,6 +144,7 @@
                             <td>{{(result.IsFoul) ? "Foul" : result.Problem1}}</td>
                             <td>{{(result.IsFoul) ? "Foul" : result.Problem2}}</td>
                             <td>{{(result.IsFoul) ? "Foul" : result.Problem3}}</td>
+                            <td>{{(result.IsFoul) ? "Foul" : result.TotalTime}}</td>
                             <td>{{(result.IsFoul) ? "Foul" : result.Sum}}</td>
                         </tr>
                     </table>
@@ -151,6 +154,7 @@
         </div>
 
         <div style="text-align:center">
+            Sampling <input type="text" ng-model="sampling"  />
             <button class="cta" ng-click="doCheck()"> Check </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <!--<button ng-click="doReset()">Reset</button>-->

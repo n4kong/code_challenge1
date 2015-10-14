@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4FF5ACEA-198C-4C65-B70A-E46590E1C493}</ProjectGuid>
+    <ProjectGuid>{1C8D7048-7A6F-476A-98CD-48D1C24FD47F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BattleshipChecker</RootNamespace>
-    <AssemblyName>BattleshipChecker</AssemblyName>
+    <RootNamespace>EnterGame</RootNamespace>
+    <AssemblyName>EnterGame</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CodeChallenge1 %281%29">
+      <HintPath>.\CodeChallenge1 (1).dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,21 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BattleshipChecker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BattleshipDlls\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CodeChallenge1.csproj">
-      <Project>{4c35b21f-f166-45fe-b748-4f29c74b498a}</Project>
-      <Name>CodeChallenge1</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

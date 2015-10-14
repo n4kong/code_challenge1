@@ -5,12 +5,14 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BattleshipChecker
 {
     public class TeamResults
     {
+        public double TimeTaken { get; set; }
         public string TeamName { get; set; }
         public int FireCount { get; set; }
 
@@ -50,13 +52,32 @@ namespace BattleshipChecker
                 var dlls = GetBattleshipAis();
                 foreach (var ai in dlls)
                 {
-                    var teamName = ai.GetTeamName();
+                    var teamName = "no name";
+                    try
+                    {
+                        teamName = ai.GetTeamName();
+                    }
+                    catch {}
                     if (!results.ContainsKey(teamName))
                         results[teamName] = new TeamResults() { TeamName = teamName, FireCount = 0 };
 
                     DummyDisplay display = new DummyDisplay();
                     BattleshipBoard board = new BattleshipBoard(display, problem);
-                    ai.Play(board);
+                    var start = DateTime.Now;
+
+                    ////
+                    var tokenSource = new CancellationTokenSource();
+                    CancellationToken token = tokenSource.Token;
+                    int timeOut = 20000;
+                    var task = Task.Factory.StartNew(() => ai.Play(board), token);
+
+                    if (!task.Wait(timeOut, token))
+                    {
+                        Console.WriteLine("The Task " + teamName + " timed out!");
+                    }
+                    //
+
+                    //ai.Play(board);
                     if (display.IsMissionCompleted)
                     {
                         results[teamName].FireCount = results[teamName].FireCount + board.FireCount;
@@ -65,6 +86,9 @@ namespace BattleshipChecker
                     {
                         results[teamName].FireCount = -1;
                     }
+                    var timeTaken = DateTime.Now.Subtract(start).TotalMilliseconds;
+                    results[teamName].TimeTaken = timeTaken;
+
                 }
             }
 

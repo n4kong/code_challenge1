@@ -67,17 +67,17 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
         }
 
 
-        [HttpGet, Route("checker/problem")]
-        public List<CheckerResult> GetTeam1Object()
+        [HttpGet, Route("checker/{sampling}")]
+        public List<CheckerResult> GetTeam1Object(int sampling )
         {
             var battleshipChecker1 = new BattleshipChecker.BattleshipChecker("c:");
-            var result1s = battleshipChecker1.CheckTopic(problem1, 1000);
+            var result1s = battleshipChecker1.CheckTopic(problem1, sampling);
 
             var battleshipChecker2 = new BattleshipChecker.BattleshipChecker("c:");
-            var result2s = battleshipChecker2.CheckTopic(problem2, 1000);
+            var result2s = battleshipChecker2.CheckTopic(problem2, sampling);
 
             var battleshipChecker3 = new BattleshipChecker.BattleshipChecker("c:");
-            var result3s = battleshipChecker3.CheckTopic(problem3, 1000);
+            var result3s = battleshipChecker3.CheckTopic(problem3, sampling);
 
             List<CheckerResult> checkerResults = new List<CheckerResult>();
             foreach (var item in result1s)
@@ -90,9 +90,13 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
                 {
                     TeamName = result1.TeamName,
                     Problem1 = result1.FireCount,
+                    Problem1Time = result1.TimeTaken,
                     Problem2 = result2.FireCount,
+                    Problem2Time = result2.TimeTaken,
                     Problem3 = result3.FireCount,
+                    Problem3Time = result3.TimeTaken,
                     Sum = isFoul ? 300 : result1.FireCount + result2.FireCount + result2.FireCount,
+                    TotalTime = result1.TimeTaken+ result2.TimeTaken+result3.TimeTaken,
                     IsFoul = isFoul
                 };
                 checkerResults.Add(cr);
@@ -105,7 +109,11 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
     }
 
     public class CheckerResult {
-        public bool IsFoul; 
+        public bool IsFoul { get; set; }
+        public double Problem1Time { get; set; }
+        public double Problem2Time { get; set; }
+        public double Problem3Time { get; set; }
+        public double TotalTime { get; set; }
         public string TeamName {get;set;}
         public int Problem1 { get; set; }
         public int Problem2 { get; set; }

@@ -8,3 +8,11 @@ C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipCh
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipChecker\obj\Debug\BattleshipChecker.csprojResolveAssemblyReference.cache
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipChecker\bin\Debug\BattleshipDlls\BattleshipAi2.dll
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipChecker\bin\Debug\BattleshipDlls\SampleDllAi1.dll
+D:\Projects\AAA\code_challenge1\BattleshipChecker\bin\Debug\CodeChallenge1.dll
+D:\Projects\AAA\code_challenge1\BattleshipChecker\bin\Debug\CodeChallenge1.pdb
+D:\Projects\AAA\code_challenge1\BattleshipChecker\obj\Debug\BattleshipChecker.csprojResolveAssemblyReference.cache
+D:\Projects\AAA\code_challenge1\BattleshipChecker\obj\Debug\BattleshipChecker.exe
+D:\Projects\AAA\code_challenge1\BattleshipChecker\obj\Debug\BattleshipChecker.pdb
+D:\Projects\AAA\code_challenge1\BattleshipChecker\bin\Debug\BattleshipChecker.exe.config
+D:\Projects\AAA\code_challenge1\BattleshipChecker\bin\Debug\BattleshipChecker.exe
+D:\Projects\AAA\code_challenge1\BattleshipChecker\bin\Debug\BattleshipChecker.pdb
