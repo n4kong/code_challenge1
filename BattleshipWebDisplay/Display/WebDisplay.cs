@@ -17,11 +17,18 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
 
         public WebDisplay()
         {
-            Delay = 2000;
+            Delay = 3000;
         }
         public void UpdateDisplay(Guid id, int column, int row, Result result)
         {
+            
+
             TeamData[id].SetResult(column, row, result);
+
+            while (TeamData[board1Id].TotalFires != TeamData[board2Id].TotalFires)
+            {
+                Thread.Sleep(500);
+            }
             Thread.Sleep(Delay);
         }
 

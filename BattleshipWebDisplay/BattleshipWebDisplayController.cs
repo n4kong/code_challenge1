@@ -45,16 +45,44 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
 
         static string[,] problem3 = new string[10, 10] 
         {
-            {"X",".",".",".",".",".",".",".",".","."},
-            {"X",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".","X",".",".",".",".",".",".","."},
+            {".",".","X",".",".",".",".",".",".","."},
+            {".",".","X",".","X",".",".",".","X","."},
+            {".",".","X",".","X",".",".",".","X","."},
+            {".",".","X",".","X",".","X",".","X","."},
+            {".",".",".",".","X",".","X",".",".","."},
+            {".",".",".",".",".",".","X",".",".","."},
+            {".",".",".",".",".",".",".",".",".","X"},
+            {".",".",".",".",".",".",".",".",".","X"}
+        };
+
+        static string[,] problem4 = new string[10, 10] 
+        {
             {".",".",".",".",".",".",".",".",".","."},
             {".",".",".",".",".",".",".",".",".","."},
-            {"X","X","X",".",".","X","X","X","X","."},
-            {".",".","X",".","X",".",".",".",".","."},
-            {".",".","X",".","X",".",".",".",".","."},
-            {".",".","X",".","X",".",".",".",".","."},
-            {".",".",".",".","X",".",".",".",".","."},
-            {".",".",".",".","X",".",".",".",".","."}
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".",".",".","."},
+            {".",".",".",".",".",".",".","X",".","."},
+            {".",".",".",".","X","X","X","X",".","."},
+            {".","X","X","X",".",".","X","X","X","X"},
+            {".",".",".",".","X","X","X","X","X","."}
+        };
+
+        static string[,] problem5 = new string[10, 10] 
+        {
+            {".",".",".",".",".",".",".",".","X","."},
+            {".",".",".",".",".",".",".",".","X","."},
+            {".",".",".",".",".",".",".",".","X","."},
+            {".",".",".","X","X","X","X",".",".","."},
+            {".",".",".",".",".",".",".",".",".","X"},
+            {".",".",".",".",".",".",".",".",".","X"},
+            {".","X",".",".",".",".",".",".",".","X"},
+            {".","X",".",".",".",".",".",".",".","X"},
+            {".","X","X","X",".",".",".",".",".","X"},
+            {".",".",".",".",".",".",".",".",".","."}
         };
         #endregion 
 
@@ -98,7 +126,8 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
                     select (IBattleshipAi)Activator.CreateInstance(type)
                 ).ToList();
 
-            return battleshipAiDlls;
+            //hardcode for final round only
+            return battleshipAiDlls.Where(c => c.GetTeamName() == "codespeed" || c.GetTeamName() == "StoneHopper").ToList();
         }
 
 
@@ -109,7 +138,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
             {
                 return "Playing game.";
             }
-            var dlls = GetBattleshipAis();
+            var dlls = GetBattleshipAis();            
             IBattleshipAi ai1 = dlls[0];
             IBattleshipAi ai2 = dlls[1];
             display = new WebDisplay();
@@ -135,8 +164,12 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
                 return problem1;
             else if (problemNo == 2)
                 return problem2;
-            else
+            else if (problemNo == 3)
                 return problem3;
+            else if (problemNo == 4)
+                return problem4;
+            else
+                return problem5;
         }
 
          [HttpGet, Route("battleship/reset")]

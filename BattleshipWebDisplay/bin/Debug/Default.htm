@@ -22,7 +22,7 @@
                 $scope.gotWinner = false;
                 $interval.cancel(timer);
 
-                timer = $interval(updateTeam1, 2000);
+                timer = $interval(updateTeam1, 3000);
                 $http({
                     method: 'GET',
                     url: 'battleship/play/' + no
@@ -48,9 +48,10 @@
 
             }
             
-            var hitSound = new Audio('explosion-02.mp3');
-            var missSound = new Audio('splash-01.wav');
+            var hitSound = new Audio('missile_hit.wav');
+            var missSound = new Audio('missile_miss.wav');
             var completedSound = new Audio('smb_stage_clear.wav');
+            
             $scope.gotWinner = false;
             $scope.team1Data = {};
             $scope.team2Data = {};
@@ -67,12 +68,13 @@
                     if (response.data.IsPlaying == false ) {
                         $interval.cancel(timer);
                     }
-
-                    playSound(response.data.IsHit, response.data.IsWin)
-
-                    $scope.team1Data = response.data;
-                    var json = JSON.stringify(response.data.Board);
-                    $scope.team1Data.Board = JSON.parse(json);
+                    playSound(response.data.IsHit, response.data.IsWin);
+                    
+                    $timeout(function () {
+                        $scope.team1Data = response.data;
+                        var json = JSON.stringify(response.data.Board);
+                        $scope.team1Data.Board = JSON.parse(json);
+                    }, 800);
                     
                     //console.log(response);
                 }, function errorCallback(response) {
@@ -93,9 +95,11 @@
                     }
                     playSound(response.data.IsHit, response.data.IsWin)
 
-                    $scope.team2Data = response.data;
-                    var json = JSON.stringify(response.data.Board);
-                    $scope.team2Data.Board = JSON.parse(json)
+                    $timeout(function () {
+                        $scope.team2Data = response.data;
+                        var json = JSON.stringify(response.data.Board);
+                        $scope.team2Data.Board = JSON.parse(json);
+                    }, 800);
                     //console.log(response);
                 }, function errorCallback(response) {
                     console.log(response);
@@ -106,7 +110,7 @@
                 if (isWin) {
                     //completedSound.play();
                 } else if (isHit) {
-                    hitSound.play();
+                    hitSound.play(); 
                 } else {
                     missSound.play();
                 }
@@ -198,11 +202,16 @@
             </table>
         </div>-->
         <div style="text-align:center">
-            <button class="cta" style="font-size:17px;" ng-click="doBattle(1)"> Battle Round 1 !!! </button>
+            <button class="cta" style="font-size:17px;" ng-click="doBattle(1)"> Battle Round 1 (Board from codespeed) !!! </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="cta" style="font-size:17px;" ng-click="doBattle(2)"> Battle Round 2 !!! </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="cta" style="font-size:17px;" ng-click="doBattle(2)"> Battle Round 2 (Board from StoneHopper) !!! </button>
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+            <br /><br />
             <button class="cta" style="font-size:17px;" ng-click="doBattle(3)"> Battle Round 3 !!! </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="cta" style="font-size:17px;" ng-click="doBattle(4)"> Battle Round 4 !!! </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="cta" style="font-size:17px;" ng-click="doBattle(5)"> Battle Round 5 !!! </button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <button ng-click="doReset()">Reset</button>
         </div>

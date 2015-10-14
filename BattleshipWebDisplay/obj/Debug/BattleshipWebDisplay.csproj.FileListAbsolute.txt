@@ -54,11 +54,12 @@ D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\Styles\csshake-ha
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\explosion-02.mp3
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\smb_stage_clear.wav
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\splash-01.wav
-C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipDlls\BattleshipAi2.dll
-C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipDlls\SampleDllAi1.dll
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipChecker.exe
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipChecker.pdb
 C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\Checker.htm
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\Checker.htm
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipChecker.exe
 D:\Projects\AAA\code_challenge1\BattleshipWebDisplay\bin\Debug\BattleshipChecker.pdb
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\whoosh.mp3
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\missile_hit.wav
+C:\Users\Kong\Documents\Visual Studio 2013\Projects\code_challenge1\BattleshipWebDisplay\bin\Debug\missile_miss.wav
