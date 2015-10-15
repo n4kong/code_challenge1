@@ -95,7 +95,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay
                     Problem2Time = result2.TimeTaken,
                     Problem3 = result3.FireCount,
                     Problem3Time = result3.TimeTaken,
-                    Sum = isFoul ? 300 : result1.FireCount + result2.FireCount + result2.FireCount,
+                    Sum = isFoul ? 300 : result1.FireCount + result2.FireCount + result3.FireCount,
                     TotalTime = result1.TimeTaken+ result2.TimeTaken+result3.TimeTaken,
                     IsFoul = isFoul
                 };

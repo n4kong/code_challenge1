@@ -63,11 +63,13 @@
             });
 
             $scope.doCheck = function () {
+                $("body").css("cursor", "progress");
                 $scope.results = null;
                 $http({
                     method: 'GET',
                     url: 'checker/' + $scope.sampling
                 }).then(function successCallback(response) {
+                    $("body").css("cursor", "default");
                     $scope.results = response.data
                     console.log(response);
                 }, function errorCallback(response) {
@@ -124,6 +126,7 @@
 
 
             </div>
+            <div class="throbber"></div>
             <div class="flex-item flex-split1 flex-row">
                 <div class="flex-item flex-split1 content" style="padding-top: 50px;  padding-left: 5%;">
                     <span><h3>Teams Score Board</h3> </span>
