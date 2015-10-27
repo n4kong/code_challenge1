@@ -22,7 +22,7 @@
                 $scope.gotWinner = false;
                 $interval.cancel(timer);
 
-                timer = $interval(updateTeam1, 3000);
+                timer = $interval(updateTeam1, 1000);
                 $http({
                     method: 'GET',
                     url: 'battleship/play/' + no
@@ -48,8 +48,8 @@
 
             }
             
-            var hitSound = new Audio('missile_hit.wav');
-            var missSound = new Audio('missile_miss.wav');
+            var hitSound = new Audio('explosion-02.mp3');
+            var missSound = new Audio('splash-01.wav');
             var completedSound = new Audio('smb_stage_clear.wav');
             
             $scope.gotWinner = false;
@@ -70,11 +70,9 @@
                     }
                     playSound(response.data.IsHit, response.data.IsWin);
                     
-                    $timeout(function () {
                         $scope.team1Data = response.data;
                         var json = JSON.stringify(response.data.Board);
                         $scope.team1Data.Board = JSON.parse(json);
-                    }, 800);
                     
                     //console.log(response);
                 }, function errorCallback(response) {
@@ -95,11 +93,9 @@
                     }
                     playSound(response.data.IsHit, response.data.IsWin)
 
-                    $timeout(function () {
                         $scope.team2Data = response.data;
                         var json = JSON.stringify(response.data.Board);
                         $scope.team2Data.Board = JSON.parse(json);
-                    }, 800);
                     //console.log(response);
                 }, function errorCallback(response) {
                     console.log(response);
@@ -118,7 +114,6 @@
             $scope.winnerRounds = [];
             function showWinner() {
                 $scope.winnerName = "";
-                $timeout(function () {
                 if ($scope.team1Data.TotalShips < $scope.team2Data.TotalShips) {
                     $scope.winnerRounds.push($scope.team1Data.TeamName);
                     $scope.winnerName = $scope.team1Data.TeamName + " WIN !!";
@@ -130,7 +125,6 @@
                     $scope.winnerName = "DRAW !!";
                 }
                 completedSound.play();
-                }, 500);
             }
 
 

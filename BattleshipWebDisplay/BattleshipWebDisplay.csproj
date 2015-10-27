@@ -17,7 +17,7 @@
     <EnableJSDebugging>False</EnableJSDebugging>
     <!-- The following properties are used by the extension -->
     <BaseExtensionPath>$(LOCALAPPDATA)</BaseExtensionPath>
-    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\mghi5i2d.buj</AppServerSDKPath>
+    <AppServerSDKPath>\Microsoft\VisualStudio\12.0\Extensions\v4x5nqo5.z3f</AppServerSDKPath>
     <IsAppServerApp>True</IsAppServerApp>
     <CreatedVersion>1.0.0.11</CreatedVersion>
     <UpgradedVersion>
@@ -103,7 +103,7 @@
   <ItemGroup>
     <Content Include="explosion-02.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Checker.htm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -17,7 +17,7 @@ namespace ThomsonReuters.Eikon.BattleshipWebDisplay.Display
 
         public WebDisplay()
         {
-            Delay = 3000;
+            Delay = 1000;
         }
         public void UpdateDisplay(Guid id, int column, int row, Result result)
         {
